@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("mongo/movieDetails")
 @AllArgsConstructor
-public class MovieDetailsController {
+public class EndPointForMovieDetails {
     private final MovieDetailsService movieDetailsService;
 
     @PostMapping("postMovieDetails")

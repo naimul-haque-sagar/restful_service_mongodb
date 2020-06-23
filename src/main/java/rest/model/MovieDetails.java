@@ -5,9 +5,10 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.Instant;
+import java.util.List;
 
 @Data
-@Document(collation = "MovieDetails")
+@Document(collection = "MovieDetails")
 public class MovieDetails {
     @Id
     private String id;
@@ -17,4 +18,6 @@ public class MovieDetails {
     private String ratings;
     private String details;
     private String director;
+//    private Artist artist;
+//    private List<ReleasePlace> releasePlaceList;
 }
