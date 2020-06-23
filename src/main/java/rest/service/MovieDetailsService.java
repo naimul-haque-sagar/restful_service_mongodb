@@ -3,6 +3,7 @@ package rest.service;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import rest.dto.MovieDetailsDto;
+import rest.dto.MovieDetails_Dto;
 import rest.exception.AppException;
 import rest.mapper.MovieDetailsMapper;
 import rest.model.MovieDetails;
@@ -32,17 +33,14 @@ public class MovieDetailsService {
                 .orElseThrow(()->new AppException("Error occurred finding movie details by id")));
     }
 
-    public MovieDetailsDto findByName(String name) {
-        return movieDetailsMapper.toDto(movieDetailsRepo.findByName(name)
+    public MovieDetailsDto findByMovieName(String name) {
+        return movieDetailsMapper.toDto(movieDetailsRepo.findByMovieName(name)
                 .orElseThrow(()->new AppException("Error occurred finding movie details by name")));
     }
 
-    public void updateMovieDetails(MovieDetailsDto movieDetailsDto, String id) {
+    public void updateMovieDetails(MovieDetails_Dto movieDetails_Dto, String id) {
         MovieDetails response=movieDetailsRepo.findById(id).orElseThrow(()->new AppException("Didn't find any movie details"));
-        response.setName(movieDetailsDto.getName());
-        response.setDetails(movieDetailsDto.getDetails());
-        response.setDirector(movieDetailsDto.getDirector());
-        response.setRatings(movieDetailsDto.getRatings());
+        response.setRatings(movieDetails_Dto.getRatings());
         response.setLastUpdated(java.time.Instant.now());
 
         movieDetailsRepo.save(response);

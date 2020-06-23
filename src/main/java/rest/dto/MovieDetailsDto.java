@@ -1,11 +1,15 @@
 package rest.dto;
 
 import lombok.Data;
+import rest.model.Artists;
+import rest.model.ReleasePlace;
+
+import java.util.List;
 
 @Data
 public class MovieDetailsDto {
-    private String name;
+    private String movieName;
     private String ratings;
-    private String details;
-    private String director;
+    private Artists artists;
+    private List<ReleasePlace> releasePlaceList;
 }

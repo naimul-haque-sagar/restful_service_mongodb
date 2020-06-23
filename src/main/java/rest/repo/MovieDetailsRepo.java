@@ -6,5 +6,5 @@ import rest.model.MovieDetails;
 import java.util.Optional;
 
 public interface MovieDetailsRepo extends MongoRepository<MovieDetails,String> {
-     Optional<MovieDetails> findByName(String name);
+     Optional<MovieDetails> findByMovieName(String name);
 }

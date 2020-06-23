@@ -14,10 +14,8 @@ public class MovieDetails {
     private String id;
     private Instant created;
     private Instant lastUpdated;
-    private String name;
+    private String movieName;
     private String ratings;
-    private String details;
-    private String director;
-//    private Artist artist;
-//    private List<ReleasePlace> releasePlaceList;
+    private Artists artists;
+    private List<ReleasePlace> releasePlaceList;
 }
