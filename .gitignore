@@ -1,4 +1,10 @@
 HELP.md
+.idea
+.mvn
+target
+mvnw
+mvnw.cmd
+Spring_Rest_Data-MongoDB.iml
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
